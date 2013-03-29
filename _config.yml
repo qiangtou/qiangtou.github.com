@@ -1,0 +1,4 @@
+auto: false
+permalink: pretty
+paginate: 2
+exclude: run.bat

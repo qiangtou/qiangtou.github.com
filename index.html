@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+<p>我的blog</p>
+欢迎大家来到我的blog
+<ul>
+　　{% for post in site.posts %}
+　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+
+
+{% for post in paginator.posts %}
+
+   <!-- here add you post markup -->
+   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+   <p class="author">
+    <span class="date">{{post.date}}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+   
+	 {% if paginator.previous_page == 1 %}
+	  <a href="/" class="previous">Previous</a>
+	 {% else %}
+		 <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
+	 {% endif %}
+	
+	
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+  {% if paginator.next_page %}
+    <a href="/page{{paginator.next_page}}" class="next ">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
+</div>
+
+------------------------------
+
+</ul>
