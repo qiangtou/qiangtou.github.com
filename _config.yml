@@ -1,5 +1,5 @@
 auto: false
 url: http://qiangtou.github.com
 permalink: pretty
-paginate: 3
+paginate: 5
 exclude: run.bat

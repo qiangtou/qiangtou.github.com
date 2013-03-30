@@ -1,18 +1,17 @@
 ---
 layout: default
 ---
-
 <h2>{{ page.title }}</h2>
-<p>我的blog</p>
+<p>潘海强的blog</p>
 欢迎大家来到我的blog
 <ul>
 　　{% for post in site.posts %}
 　　　　<li>{{ post.date | date_to_string }} 
 			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-			<p>{{ post.content | truncate 10 }}</p>
+			<p>{{ post.content | truncate 10 |strip_html }}</p>
 		</li>
 　　{% endfor %}
-
+</ul>
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
@@ -33,7 +32,4 @@ layout: default
     <span class="next ">Next</span>
   {% endif %}
 </div>
-
 ------------------------------
-
-</ul>
