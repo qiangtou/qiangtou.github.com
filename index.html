@@ -7,9 +7,10 @@ layout: default
 欢迎大家来到我的blog
 <ul>
 　　{% for post in site.posts %}
-　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
- {{ post.content | truncate 10}}
-</li>
+　　　　<li>{{ post.date | date_to_string }} 
+			<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+			<p>{{ post.content | truncate 10 }}</p>
+		</li>
 　　{% endfor %}
 
 <!-- Pagination links -->
