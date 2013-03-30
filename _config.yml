@@ -1,5 +1,6 @@
 auto: false
 url: http://qiangtou.github.com
 permalink: pretty
+markdown: redcarpet
 paginate: 5
 exclude: run.bat
