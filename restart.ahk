@@ -1,11 +1,15 @@
 #SingleInstance force
-;重启
-!1::
+menu,TRAY,icon,favicon.ico
+menu,TRAY,tip,alt+r重启jekyll服务并打开网页
+
+!r::
 t= C:\Windows\system32\cmd.exe
-WinClose, %t%
-run G:\work_space\my_doc\run.bat
-sleep 800
-WinMinimize, %t%
-run http://localhost:4000
+IfWinExist, %t%
+{	
+	WinClose, %t%
+}
+run,run.bat,A_ScriptDir,min
+sleep 900
+run,http://localhost:4000
 return 
 
