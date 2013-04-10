@@ -1,74 +1,31 @@
-body {
-  font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
-  background: black;
-  color: #ececec;
-  padding: 0;
-  margin: 0;
+p{
+text-indent:2em;
 }
-ul {
-  margin: 0;
-  padding: 0;
+body{
+padding-top: 0px; 
+margin-top: 0px;
 }
-a {
-  color: #ccc;
-  rubyt-decoration: none;
+.top{
+background:url(/img/banner.jpg) no-repeat;
+height:180px;
 }
-
-a:hover {
-  color: #ececec;
-  rubyt-decoration: underline;
+.nav{
+position:fixed;
+width:20em;
+left:850px;
 }
-
-#main {
-  width: 960px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.4);
+.tag,.category{
+margin:2px;
+width:600px;
+border:1px solid red;
 }
-header {
-  padding: 0 10px;
-  overflow: hidden;
-}
-h1 {
-  margin: 0;
+.tag>h3,.category>h3{
+margin-top:5px;
+margin-bottom:0;
+text-indent:1em;
 }
 
-nav ul, ul.entries {
-  list-style-type: none;
-}
-nav li a {
-  float: left;
-  margin: 5px;
-}
-.content {
-  padding: 10px;
-}
-
-ul.entries li {
-  position: relative;
-  margin: 20px auto;
-  padding: 20px;
-  background: #ececec;
-  width: 600px;
-}
-
-ul.entries img {
-  width: 600px;
-}
-
-ul.entries li h3 {
-  position: absolute;
-  bottom: -18px;
-  left: 17px;
-  font-size: 2em;
-}
-ul.entries a {
-  color: #ececec;
-}
-ul.entries a:hover {
-  color: #fff;
-}
-
-footer {
-  font-size: 0.65em;
-  rubyt-align: center;
+.tag li,.category li{
+margin-top:0;
+margin-bottom:0;
 }

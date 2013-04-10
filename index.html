@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p>潘海强的blog</p>
-欢迎大家来到我的blog
+<div class="content">
 <ul>
 　　{% for post in paginator.posts %}
 　　　　<li>{{ post.date | date_to_string }} 
@@ -12,23 +10,21 @@ layout: default
 		</li>
 　　{% endfor %}
 </ul>
-<!-- Pagination links -->
+</div>
+<!-- Pagination links start-->
 <div class="pagination">
   {% if paginator.previous_page %}
    
-	 {% if paginator.previous_page == 1 %}
-	  <a href="/" class="previous">Previous</a>
+	 {% if paginator.previous_page ==1 %}
+		<a href="/" class="previous">上一页</a>
 	 {% else %}
-		 <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
+		 <a href="/page{{paginator.previous_page}}" class="previous">上一页</a>
 	 {% endif %}
 
-  {% else %}
-    <span class="previous">Previous</span>
   {% endif %}
-  <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+  <span class="page_number ">当前页: {{paginator.page}} of {{paginator.total_pages}}</span>
   {% if paginator.next_page %}
-    <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
+    <a href="/page{{paginator.next_page}}" class="next ">下一页</a>
   {% endif %}
 </div>
+<!-- Pagination links end-->
