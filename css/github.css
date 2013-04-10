@@ -275,3 +275,7 @@ pre {
   pre code, pre tt {
     background-color: transparent;
     border: none; }
+	
+p{
+text-indent:2em;
+}
