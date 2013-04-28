@@ -1,0 +1,9 @@
+[AutoProxy 0.3.0]
+|http://www.vim.org
+||youtube.com
+||twitter.com
+||facebook.com
+||google.com
+||googlecode.com
+||appspot.com
+||sourceforge.net
