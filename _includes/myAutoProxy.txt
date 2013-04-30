@@ -7,3 +7,4 @@
 ||googlecode.com
 ||appspot.com
 ||sourceforge.net
+||ytimg.com
