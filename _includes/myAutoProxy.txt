@@ -1,5 +1,6 @@
 [AutoProxy 0.3.0]
 |http://www.vim.org
+||git-scm.com
 ||youtube.com
 ||twitter.com
 ||facebook.com
