@@ -2,6 +2,7 @@
 |http://www.vim.org
 ||git-scm.com
 ||youtube.com
+||youtube.be
 ||twitter.com
 ||facebook.com
 ||google.com
