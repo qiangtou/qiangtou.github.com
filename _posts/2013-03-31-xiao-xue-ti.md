@@ -54,5 +54,5 @@ a*b肯定是小于100的，这个很容易知道，于是
 	
 	
 ---
-[pic1]: {{site.url}}/img/xiao-xue-ti.png
+[pic1]: {{site.url}}/static/img/xiao-xue-ti.png
 
