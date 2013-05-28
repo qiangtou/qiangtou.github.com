@@ -4,13 +4,12 @@ title: 标签
 ---
 
 　　{% for tag in site.tags %}
-<div class='tag'>
-  		<h3 id="{{tag[0]}}">
-		{{tag[0]}}
-		</h3>
+　　{% assign tagName = tag[0] %}
+<div class='tag' id='{{tagName}}'>
+  		<h3>{{tagName}}</h3>
 		<ul>
-		{% assign name = tag[0] %}
-		{% for post in site.tags[name] %}
+		
+		{% for post in site.tags[tagName] %}
 		<li>
 			<a href="{{post.url}}">{{post.title}}</a>
 		</li>
