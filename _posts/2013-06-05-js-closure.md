@@ -26,6 +26,10 @@ categories: it
 
 attr被移到外面的闭包里面去了
 
+再来一发，下面是菲波那契数列。变量storage是亮点哦
+
+<iframe width="100%" height="350" src="http://jsfiddle.net/qiangtou/aN5P2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 ##结语
 
 闭包在很多现代的框架中已被大量应用，数据仓库只是冰山一角，希望大家可以举一反三。
