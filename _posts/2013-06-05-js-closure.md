@@ -28,7 +28,7 @@ attr被移到外面的闭包里面去了
 
 再来一发，下面是菲波那契数列。变量storage是亮点哦
 
-<iframe width="100%" height="350" src="http://jsfiddle.net/qiangtou/aN5P2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="320" src="http://jsfiddle.net/qiangtou/aN5P2/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 ##结语
 
