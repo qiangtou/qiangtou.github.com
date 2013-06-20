@@ -175,41 +175,45 @@ f={
 174:'如果路由开启于支持pushState的浏览器，但是目前我们在一个不支持的浏览器中',
 175:'马上返回当浏览器重定向到新的url时',
 176:'',
-177:'',
-178:'',
-179:'',
-180:'',
-181:'',
-182:'',
-183:'',
-184:'',
-185:'',
-186:'',
-187:'',
-188:'',
-189:'',
-190:'',
-191:'',
-192:'',
-193:'',
-194:'',
-195:''
+177:'停用Backbone.history,可能是暂时的。在实际应用中不是很有用，但在单元测试中会用到。',
+178:'添加路由，当片断改变时可测。后添加的路由会覆盖之前的路由规则',
+179:'检测当前url是否改变，改变则调用loadUrl,兼容跨域隐藏的iframe',
+180:'尝试加载当前URL片断。如果一个路由成功匹配，返回true,否则返回false',
+181:'保存片断到历史的hash中，或者替换URL状态如果传入replace参数的话。你有责任预先进行URL编码。<br/>如果你希望路由回调被触发，可以在options中传入trigger:true.你想不通过添加实体到history而修改当前URL，可以传入replace:true',
+182:'如果pushState是有效的，我们使用它来设置片断作为实际的url',
+183:'如果hash的改变没有明确停用，更新hash片断并存储history',
+184:'打开和关闭框架欺骗ie7以下的版本以将历史实体放入到哈希标签改变中去。当replace为trur时，我们不想这样',
+185:'如果你告诉我们，你明确不想基于hashchange的历史的回退，则navigate成为刷新页面。',
+186:'更新哈希的位置，无论是取代当前条目，或添加一个新的浏览器的历史记录。',
+187:'有些浏览器需要哈希包含前导＃',
+188:'创建默认Backbone.history。',
+190:'辅助函数用来正确设置原型链，为实现子类。与goog.inherits相似，但使用原型属性和类属性的哈希来进行继承。',
+191:'子类的构造函数可以由你定义（在protoProps.constructor中定义），也可以默认返回父类的简单包装',
+192:'如果提供了静态属性的话则添加到新的子类中去。',
+193:'设置继承于父类的原型链，不是通过直接new父类的构造函数哦（直接new父类的话，内部会初始化各种属性，方法，代价太大。这里采用了一个间接的surrogate的小封装，原型只是一个引用而已，new的代价会小点）',
+194:'如果传入了原型属性，添加至child.prototype中去',
+195:'',
+196:'',
+197:'',
+198:'',
+199:''
 };
-	   
-   $l=function(id){
-   return document.getElementById('section-'+id); 
-   }
-   $p=function(li){
-   return li.children[0].children[1];
-   }
-   insertAfter=function(elem,newElem){
-    elem.parentElement.appendChild(newElem);
-   }
-   for(id in f){
-   p=$p($l(id));
-   np=document.createElement('p');
-   np.innerHTML=f[id];
-   insertAfter(p,np);
+
+$l=function(id){
+	return document.getElementById('section-'+id); 
+}
+$p=function(li){
+	var child=li && li.children[0];
+	return child && child.children[1];
+}
+insertAfter=function(elem,newElem){
+	elem && elem.parentElement.appendChild(newElem);
+}
+for(id in f){
+	p=$p($l(id));
+	np=document.createElement('p');
+	np.innerHTML=f[id];
+	insertAfter(p,np);
 }
 
 })();;
