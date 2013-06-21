@@ -130,8 +130,8 @@ f={
 131:'清除之前用delegateEvents绑定的所有回调。通常是不需要使用这个方法的，但是在多个view附在同一个dom元素上时可能会用到',
 132:'利用options执行视图的初始化配置',
 133:'确保视图有一个dom元素来渲染。如果this.el的值是通过字符串的形式传入$(),this.el会取第一个Dom元素。否则将从id,className和tagName创建一个元素分配给this.el',
-135:'重写这个函数改变Backbone持久化model到服务器的行为。这个方法会传入请求类型和model。默认的实现是发送RESTful Ajax请求到model的url().下面是一些可自定义的实践：</br>'+
-	'<ul><li>使用setTimeout把批量快速的更新处理成一次请求</li>'
+135:'重写这个函数改变Backbone持久化model到服务器的行为。这个方法会传入请求类型和model。默认的实现是发送RESTful Ajax请求到model的url().下面是一些可自定义的实践：</br>'
+	+'<ul><li>使用setTimeout把批量快速的更新处理成一次请求</li>'
 	+'<li>使用xml替换json</li>'
 	+'<li>使用websockets替换ajax</li>'
 	+'</ul>'
@@ -210,9 +210,9 @@ insertAfter=function(elem,newElem){
 }
 for(id in f){
 	p=$p($l(id));
-	np=document.createElement('p');
+	np=document.createElement('div');//不能用p，p里面接li在ie678下就是一个大大的坑
 	np.innerHTML=f[id];
 	insertAfter(p,np);
 }
 
-})();;
+})();
