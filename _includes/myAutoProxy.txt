@@ -4,6 +4,7 @@
 ||youtube.com
 ||youtu.be
 ||twitter.com
+||t.co
 ||facebook.com
 ||google.com
 ||googlecode.com
