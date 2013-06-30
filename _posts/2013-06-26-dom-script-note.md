@@ -45,3 +45,26 @@ href里面运行function，如果有返回值，会把返回值输出到当前�
 
 而这种方式，因为用了var关键字，虽然最终效果都是把a放到window里面去，但是这种方式只是在运行到这一行时，才会把函数给赋值到window.a上，在之前window.a的值是undefined,所以在前面运行a()时会报错，具体的错误可以看看控制台，嘿嘿。
 
+
+##第三章.DOM2核心和DOM2 HTML
+
+###3.4.DOM核心
+
+3.4.2.核心Node对象
+
+4.节点的ownerDocument属性
+
+一个结点的ownerDocument属性引用的是文档的根对象，一般来说是document对象，既然document对象有了，那么为什么还要用这个呢？请看下面的例子
+
+	function example(node){
+		var document='hehe';	
+		//这个是对的
+		var node1=node.ownerDocument.getElementById('id');
+	
+		//下面这个就是不行的了，因为局部变量已经把document给覆盖了
+		var  node2=document.getElementById('id');
+	}
+
+ownerDocument属性的值是不可改变的，如果硬是要改变，去强行赋值的话，是不起作用的，在使用这个属性的时候，它始终是指向文档根对象的。
+
+这就是我对这个属性的理解，做为一个document对象的备用吧。
