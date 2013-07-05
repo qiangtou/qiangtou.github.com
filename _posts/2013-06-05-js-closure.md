@@ -1,7 +1,7 @@
 ---
 layout: post
 title: js闭包中级应用
-tags: closure
+tags: closure js
 categories: it
 ---
 ##经典案例
