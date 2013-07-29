@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Pushing and Popping with the History API
-tags: t1
-categories: c2
+tags: js
 ---
 
 原文链接：<http://html5doctor.com/history-api/>
@@ -20,5 +19,3 @@ categories: c2
 ##话不多说，举个粟子！！
 
 <http://historyapi.sturgeon.mopaas.com/>
-
-
