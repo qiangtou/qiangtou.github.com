@@ -9,7 +9,7 @@ IfWinExist, %t%
 	WinClose, %t%
 }
 run,run.bat,A_ScriptDir,min
-sleep 900
+sleep 1000
 run,http://localhost:4000
 return 
 
