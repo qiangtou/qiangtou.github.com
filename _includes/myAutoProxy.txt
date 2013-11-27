@@ -11,3 +11,4 @@
 ||appspot.com
 ||sourceforge.net
 ||ytimg.com
+||googlevideo.com
