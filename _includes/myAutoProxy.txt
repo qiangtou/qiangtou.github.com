@@ -12,3 +12,4 @@
 ||sourceforge.net
 ||ytimg.com
 ||googlevideo.com
+||ajax.googleapis.com
