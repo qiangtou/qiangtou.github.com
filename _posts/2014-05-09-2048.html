@@ -1,0 +1,29 @@
+---
+layout: post
+title: 基于avalonJS实现的2048
+tags: avalon 2048 
+categories: js
+---
+<link type="text/css" rel="stylesheet" href="/static/css/2048.css">
+{% raw %}
+    <div id='content' ms-controller='2048'>
+        <div class="history">
+            历史记录
+            <table ms-repeat='h' ms-class='{{(h.length-$index)&1?"even":"odd"}}'>
+                <tr ms-repeat='el'>
+                    <td ms-repeat='el'>{{el?el:''}}</td>
+                </tr>
+            </table>
+        </div>
+        请按上，下，左，右控制
+        <table>
+            <tr ms-repeat='arr'>
+                <td ms-repeat='el'>{{el?el:''}}</td>
+            </tr>
+        </table>
+        <input type="button" value='重置' ms-click='restart' />
+        <input type="button" ms-visible='h.length>1' value='后悔' ms-click='hu' />score:{{score}}
+    </div>
+{% endraw %}
+    <script src='/static/js/avalon.js'></script>
+    <script src='/static/js/2048.js'></script>
