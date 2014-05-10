@@ -87,6 +87,7 @@
                 var yy = _a[i].length - j - 1;
                 console.log('移动后[' + xx + '][' + yy + ']的值是' + _a[xx][yy], '放入', nn)
                 _a[xx][yy] = nn;
+				game.addHistory();
             }
             return _a;
         }
@@ -123,6 +124,9 @@
             	vm.score=0;
                 vm.arr = initdata(2);
             }
+			vm.addHistory=function(){
+                vm.h.unshift(clone(game.arr));
+			}
             vm.check = function () {
 
             }
@@ -130,7 +134,6 @@
                 console.log(key)
                 vm.key = key;
                 vm.arr = action[key](game.arr)
-                vm.h.unshift(clone(game.arr));
             }
         });
         game.restart();
