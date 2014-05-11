@@ -11,14 +11,14 @@ categories: js
             历史记录
             <table ms-repeat='history' ms-class='{{(history.length-$index)&1?"even":"odd"}}'>
                 <tr ms-repeat='el'>
-                    <td ms-repeat='el'>{{el?el:''}}</td>
+					<td ms-repeat='el'>{{el?el:''}}</td>
                 </tr>
             </table>
         </div>
         请按上，下，左，右控制
         <table>
             <tr ms-repeat='arr'>
-                <td ms-repeat='el'>{{el?el:''}}</td>
+				<td ms-repeat='el' ms-attr-style='background:{{getColor(el)}}'>{{el?el:''}}</td>
             </tr>
         </table>
         <input type="button" value='重置' ms-click='restart' />
