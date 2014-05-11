@@ -90,17 +90,19 @@
 		var canmove=true;
 		if(sum<2){
 			//当格子满时检测是否可移动，做24次检测
-			var next;
-			canmove=false
+			var current,next;
+			canmove=false;
+			checkcanmove:
 			for(i=2;i--;)
 				for(j=4;j--;)
 					for(k=3;k--;){
 						x=i?j:k;
 						y=i?k:j;
+						current=_a[x][y];
 						next=i?_a[x][y+1]:_a[x+1][y];
-						if(_a[x][y]==next){
+						if(current==next || current==0 || next==0 ){
 							canmove=true;
-							break;
+							break checkcanmove;//中断三层循环
 						}
 					}
 		}
