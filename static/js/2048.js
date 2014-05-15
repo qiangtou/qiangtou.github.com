@@ -29,67 +29,74 @@
 		}
 
 	}
-	var move2Left = function (a) {
-		var _a = [],i,j,k,x,y,
-		empNum = [],
-		move = false;
-		var _a = a.map(function (list) {
-			var _list = list.slice();
-			var e1, e2, emp = [],
-			r = [];
-			for (i = 0, len = list.length; i < len; i++) {
-				e1 = list[i];
-				if (e1 == 0) {
-					emp.push(e1);
+	var move2Left = function (arr) {
+		var empNum=[];
+		var zeroNum=0;
+		var moved=false;
+		var score=0;
+		//移动
+		for(var i=0,len=arr.length;i<len;i++){
+			var lastIndex=-1,hasAdd=false,a=arr[i];
+			for(var j=0,len2=a.length;j<len2;j++){
+				var now=a[j];
+				if(now==0){
+					zeroNum++;
 					continue;
 				}
-				r.push(e1);
-				move = move || (list[i - 1] === 0)
-				do {
-					e2 = list[++i];
-					if (e2 > 0) {
-						if (e1 == e2) {
-							move = true;
-							emp.push(list[i] = 0);
-							game.score += (r[r.length - 1] = e1 * 2);
-						} else {
-							i--;
-						}
-						break;
-					} else if (e2 == 0) {
-						emp.push(e2);
+				var last=a[lastIndex];
+				if(last==void 0){
+					a[++lastIndex]=now;
+					if(j>lastIndex){
+						a[j]=0;
+						moved=true;
 					}
-				} while (i < len);
+					continue;
+				}
+				if(last==now){
+					if(hasAdd=!hasAdd){
+						zeroNum++;
+						a[lastIndex]=now*2;
+						score+=now*2;
+						a[j]=0;
+					}else{
+						a[++lastIndex]=now;
+						if(j>lastIndex){
+							a[j]=0;
+							moved=true;
+						}
+					}
+				}else{
+					hasAdd=false;
+					a[++lastIndex]=now;
+					if(j>lastIndex){
+						a[j]=0;
+						moved=true;
+					}
+				}
 			}
-			console.log(_list, '-->', r, emp)
-			empNum.push((empNum[empNum.length - 1] || 0) + emp.length);
-			return r.concat(emp);
-		});
-
-		//0的个数
-		var sum = empNum[empNum.length - 1];
-		if (game.moved=move) {
-			var n, m, r = j = Math.random() * sum | 0;
-			for (i = 0, len = empNum.length - 1; i < len; i++) {
-				n = empNum[i];
-				m = empNum[i + 1]
-				if (r < n)break;
-				if (r < m) {
-					i++;
-					j = r - n;
+			empNum[i]=zeroNum;
+		}
+		//有移动操作就填新数
+		if(game.moved=moved||score>0){
+			zeroNum--;
+			var x,y;
+			var r=Math.random()*zeroNum|0
+			for(x=0;x<4;x++){
+				var sum=empNum[x];
+				if(r<sum){
+					//y=[3,2,1,0][sum-r];
+					y=r+4-sum
+					var v=arr[x][y]
+					arr[x][y]=2;
 					break;
 				}
 			}
-			var newNum = [2, 2, 2, 2, 2, 2, 2, 2, 4]
-			newNum = newNum[Math.random() * newNum.length | 0]
-			x = i;
-			y = _a[i].length - j - 1;
-			console.log('移动后[' + x + '][' + y + ']的值是' + _a[x][y], '放入', newNum)
-			_a[x][y] = newNum;
 		}
+		//能否移动检测
 		var canmove=true;
-		if(sum<2){
+		if(zeroNum==0){
 			//当格子满时检测是否可移动，做24次检测
+			var _a=arr;
 			var current,next;
 			canmove=false;
 			checkcanmove:
@@ -107,7 +114,8 @@
 					}
 		}
 		game.canmove=canmove;
-		return _a;
+		game.score+=score;
+		return arr;
 	}
 
 	var initdata = function (num) {
@@ -171,6 +179,7 @@
 			if(vm.moved){
 				vm.arr=arr;
 				vm.history.unshift(arr);
+				if(vm.history.length>10)vm.history.pop()
 			}
 			if(!vm.canmove){
 				alert('Game Over !');
@@ -186,6 +195,8 @@
         }
         var action = {
             left: function (arr) {
+                arr = transform.left(arr);
+                arr = transform.right(arr);
                 return move2Left(arr);
             },
             up: function (arr) {
