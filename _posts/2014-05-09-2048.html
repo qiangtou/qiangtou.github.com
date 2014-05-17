@@ -15,7 +15,7 @@ categories: js
                 </tr>
             </table>
         </div>
-        请按上，下，左，右控制
+				请按上，下，左，右控制;
         <table>
             <tr ms-repeat='arr'>
 				<td ms-repeat='el' ms-attr-style='background:{{getColor(el)}}'>{{el?el:''}}</td>
@@ -23,6 +23,9 @@ categories: js
         </table>
         <input type="button" value='重置' ms-click='restart' />
         <input type="button" ms-visible='history.length>1' value='后悔' ms-click='regret' />score:{{score}}
+		<span id='time' style='margin-left:250px'>
+		time:{{Math.floor(time/3600)}}:{{Math.floor(time/60)}}:{{time%60}}
+		</span>
     </div>
 	<script src='/static/js/avalon.js'></script>
 	<script src='/static/js/2048.js'></script>

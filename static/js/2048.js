@@ -141,6 +141,8 @@
 		vm.key = '';
 		vm.moved=false;
 		vm.canmove=true;
+		vm.start=false;
+		vm.time=0;
 		vm.$colors=[
 			'#ffffff',
 			'#eee4da',
@@ -166,6 +168,7 @@
 			}
 		}
 		vm.restart = function () {
+			vm.start=false;
 			vm.score=0;
 			vm.canmove=true;
 			var arr=initdata(2);
@@ -173,6 +176,9 @@
 			vm.arr = arr;
 		}
 		vm.move = function (key) {
+			if(!vm.start){
+				vm.start=true;
+			}
 			console.log(key)
 			vm.key = key;
 			var arr=action[key](game.arr);
@@ -186,6 +192,22 @@
 			}
 		}
 	});
+	game.$watch('start',(function(){
+		var iv;
+		return function(start){
+			if(start){
+				var time=0
+				iv=setInterval(function(){
+					time++;
+					game.time=time;
+				},1000);
+			}else{
+				clearInterval(iv);
+			}
+
+		}
+	})())
+	
         game.restart();
         var keymap = {
             37: 'left',
@@ -220,7 +242,7 @@
                 return arr;
             }
         }
-        document.body.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', function (e) {
             var keycode = e.keyCode | e.which,
                 key = keymap[keycode];
 				if(key){
