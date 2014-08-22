@@ -4,7 +4,6 @@ title: 从零开始安装redmine
 tags: redmine
 categories: dev
 ---
-# 从零开始安装redmin
 
 ## 说明
 [redmine]是一个开源的用于项目管理的web应用,基于[ruby]语言编写,使用[ruby on rails][ror]框架.
@@ -144,6 +143,9 @@ categories: dev
 	ruby script/rails server mongrel -e production
 
 访问地址是<http://localhost:3000>
+
+
+
 
 [redmine]: http://www.redmine.org/
 [ruby]: https://www.ruby-lang.org/zh_cn/
