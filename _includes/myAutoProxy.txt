@@ -11,5 +11,6 @@
 ||appspot.com
 ||sourceforge.net
 ||ytimg.com
+||twimg.com
 ||googlevideo.com
 ||ajax.googleapis.com
