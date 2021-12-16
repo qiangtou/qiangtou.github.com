@@ -19,4 +19,5 @@
 ||githubusercontent.com
 ||wikipedia.org
 ||wikimedia.org
+||googleapis.com
 google.co
