@@ -16,6 +16,7 @@
 ||googlevideo.com
 ||ajax.googleapis.com
 ||github.com
+||githubusercontent.com
 ||wikipedia.org
 ||wikimedia.org
 google.co
