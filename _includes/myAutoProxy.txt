@@ -17,4 +17,5 @@
 ||ajax.googleapis.com
 ||github.com
 ||wikipedia.org
+||wikimedia.org
 google.co
