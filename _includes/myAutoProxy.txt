@@ -20,4 +20,5 @@
 ||wikipedia.org
 ||wikimedia.org
 ||googleapis.com
+||ggpht.com
 google.co
