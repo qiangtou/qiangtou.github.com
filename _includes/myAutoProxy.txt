@@ -15,4 +15,6 @@
 ||twimg.com
 ||googlevideo.com
 ||ajax.googleapis.com
+||github.com
+||wikipedia.org
 google.co
